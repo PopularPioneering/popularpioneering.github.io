@@ -1,0 +1,9 @@
+---
+label: Post
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+pages:
+- _posts/test-post-please-ignore.md
