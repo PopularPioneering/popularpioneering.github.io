@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
   <div class="home-hero-wrapper">
     <section class="home-content">
+      {%- if page.title -%}
+        <h1 class="page-heading">{{ page.title }}</h1>
+      {%- endif -%}
       {{ content }}
     </section>
+    
     <section class="info-panel">
       <div class="info-pane">
         <h2>What is Satisfactory?</h2>
@@ -21,6 +21,7 @@ layout: default
         <p><a href="https://ficsit.app/mod/FicsItNetworks">FicsItNetworks</a> is a mod for Satisfactory by <a href="https://panakotta00.massivebytes.net/">Panakotta00</a> that allows you to control, mointor, manage and automate each process of your factory by providing a network system and programmable computers.</p>
       </div>
     </section>
+    
   </div>
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
