@@ -2,7 +2,7 @@
 title: A logical progression...
 ---
 
-I love Satisfactory, you probably do too. Between us we've must have sunk hundreds if not thousands of hours into it. No regrets! With that amount of time doing anything, it's natural to want to push the boundries of the sandbox. FicsIt-Networks is a wonderful mod that lets you do just that. 
+I love Satisfactory, you probably do too. Between us we've must have sunk hundreds if not thousands of hours into it. No regrets! With that amount of time doing anything, it's natural to want to push the boundries of the sandbox. [FicsIt-Networks](https://ficsit.app/mod/FicsItNetworks) is a wonderful mod that lets you do just that. 
 
 When gazing down on your latest sprawling industrial complex -- FicsIt cup in hand -- have you ever thought: "I wish I could automate this *even more*"? Perhaps you long for that central control room, bristling with working displays and retro-future control panels.
 
