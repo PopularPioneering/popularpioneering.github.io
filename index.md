@@ -1,5 +1,5 @@
 ---
-title: A logical progression
+title: A logical progression...
 ---
 
 I love Satisfactory, you probably do too. Between us we've must have sunk hundreds if not thousands of hours into it. No regrets! With that amount of time doing anything, it's natural to want to push the boundries of the sandbox. FicsIt-Networks is a wonderful mod that lets you do just that. 
