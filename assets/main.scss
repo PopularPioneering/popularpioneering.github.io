@@ -24,8 +24,14 @@
 }
 
 .home-content {
-  width: 75%;
+  width: 70%;
 }
 .info-panel {
-  width: 25%;
+  width: 30%;
+   font-size: 0.8em;
+   
+   blockquote {
+    font-size: 1em;
+    letter-spacing: 0;
+   }
 }
