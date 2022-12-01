@@ -35,12 +35,23 @@ $content-width: 1000px;
 
 .info-pane {
    background: #efefef;
-   padding: 10px 15px;
+   padding: 20px;
    margin: 0 0 20px;
    
    blockquote {
     font-size: 1em;
     letter-spacing: 0;
+   }
+   
+   .title { 
+     display: flex;
+     line-height: 1;
+   }
+   
+   img {
+     margin-right: 10px;
+     height: 60px;
+     width: 60px;
    }
 }
 
