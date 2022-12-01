@@ -1,0 +1,13 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.site-title {
+   background: transparent url('/uploads/ppfinlogo.gif') no-repeat top left;
+   text-indent: -9999px;
+   overflow: hidden;
+   display: block;
+   width: 600px;
+   height: 78px;
+}
