@@ -97,12 +97,12 @@ h1,h2,h3,h4,h5,h6 {
    &:hover {
      color: #fff;
      background-color: #787878;
-     top: 2px;
-     left: 2px;
+     top: -1px;
+     left: -1px;
       
       &:after {
-         left: 1px;
-         top: 1px;
+         left: 4px;
+         top: 4px;
       }
       
      img {
