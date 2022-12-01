@@ -1,8 +1,19 @@
 ---
 ---
 $content-width: 1000px;
+
+$orange: #d7902a;
+$orange-dark: #ab6f1a;
    
 @import "minima";
+
+a { 
+ color: $orange;
+   
+ &:visited {
+  color: $orange-dark;
+ }
+}
 
 .site-title {
    margin: 10px 0;
@@ -79,7 +90,7 @@ h1,h2,h3,h4,h5,h6 {
      background-color: #787878;
    }
    
-   strong { color: #ffb852 }
+   strong { color: $orange }
    
    &:after {
       content: '';
@@ -93,5 +104,4 @@ h1,h2,h3,h4,h5,h6 {
     z-index: -1;
     border-radius: 5px;
    }
-   
 }
