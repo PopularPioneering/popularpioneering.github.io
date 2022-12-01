@@ -1,9 +1,7 @@
 ---
 ---
 
-@import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize";
+@import "minima/initialize";
 
 .site-title {
    background: transparent url('/uploads/ppfinlogo.gif') no-repeat top left;
