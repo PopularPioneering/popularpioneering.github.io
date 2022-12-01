@@ -96,7 +96,14 @@ h1,h2,h3,h4,h5,h6 {
    
    &:hover {
      color: #fff;
-     background-color: #787878; 
+     background-color: #787878;
+     top: 2px;
+     left: 2px;
+      
+      &:after {
+         left: 1px;
+         top: 1px;
+      }
       
      img {
        opacity: 0.4; 
