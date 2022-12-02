@@ -15,7 +15,7 @@ local container = component.proxy('XYZ123')
 
 This technique is not advised for a number of reasons. The most obvious is that if you deconstruct a networked component, that instance and the associated UUID is lost forever and you will have to manually enter the new UUID of the replacement. This can be a real hassle - UUIDs are not human-readable and the more you add to your code the less meaning each one has. Scrolling through a long list of UUIDs to find the right one can get annoying very quickly. 
 
-We want our code to be easy maintain and not rely on lots of manual copy/pasting, that kind of gruntwork is for those other Pioneers! 
+We want our code to be easy to maintain and not rely on lots of manual copy/pasting, that kind of gruntwork is for those other Pioneers! 
 
 ## By nickname query
 
