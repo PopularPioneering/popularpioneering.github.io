@@ -45,9 +45,9 @@ Typically you will only ever pass the result of `component.findComponent()` into
 
 ## By class
 
-Can we avoid having to manually enter nicknames as well? Assigning nicknames is considered good practice for organisation alone, but there are some instances where you might need to 'discover' components on a network without hardcoding a nickname. Enter the `findClass()` function.
+Can we avoid having to manually enter nicknames? Assigning nicknames is considered good practice for organisation, but there are some instances where you might need to 'discover' components on a network without hardcoding a nickname. Enter the `findClass()` function.
 
-Here's how it looks added to our shortened one liner from the previous example:
+Here's how it looks added to our shortened one-liner from the previous example:
 
 ```lua
 local component.proxy(component.findComponent(findClass("Build_StorageContainerMk1_C")))[1]
