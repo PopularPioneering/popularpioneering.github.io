@@ -4,7 +4,7 @@ title: Three ways to find network components
 date: 2022-12-02
 ---
 
-## Direct UUID reference
+## By UUID
 
 When you connect a component to your network it is assigned a unique identifier, known as a UUID. You can pass this UUID straight into the `component.proxy()` function to get a quick reference to your networked component. You can easily copy the UUID of a component to the clipboard by clicking it in the list of attached components in the terminal.
 
