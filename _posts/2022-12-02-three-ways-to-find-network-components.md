@@ -10,6 +10,7 @@ When you connect a component to your network it is assigned a unique identifier,
 
 ```lua
 local container = component.proxy('XYZ123')
+-- Do stuff with your container, like:
 -- container:getInventories()
 ```
 
@@ -26,7 +27,6 @@ For now, here's an example of how you find a component with a nickname. We've gi
 ```lua
 local matching_component_uuids = component.findComponent('Storage Container 1')
 local container = component.proxy(matching_component_uuids)[1]
--- container:getInventories()
 ```
 
 This time we are using another method of the component class: `component.findComponent()`. It takes one or more strings (our search terms) and returns an array of component UUIDs with nicknames that match those terms. This means that rather than passing a single UUID string into `component.proxy()` like before, we are passing in an array of UUID strings. 
@@ -39,7 +39,6 @@ You'll probably need to reference a lof of components in your scripts, so these 
 
 ```lua
 local container = component.proxy(component.findComponent('StorageContainer 1'))`
--- container:getInventories()
 ```
 
 Typically you will only ever pass the result of `component.findComponent()` into a single `component.proxy()` call. There's no need to declare it as a variable we can just pass the result in directly. Tidy!
@@ -52,7 +51,6 @@ Here's how it looks added to our shortened one liner from the previous example:
 
 ```lua
 local component.proxy(component.findComponent(findClass("Build_StorageContainerMk1_C")))[1]
--- container:getInventories()
 ```
 
 This time we're chaining three function calls. We pass the result of `findClass()` into `component.findComponent()` and then we pass the result of that into `component.proxy()`.
