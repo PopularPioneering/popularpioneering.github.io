@@ -111,6 +111,16 @@ h1,h2,h3,h4,h5,h6 {
      }
    }
    
+   &:active {
+    top: 2px;
+    left: 2px;
+      
+    &:after {
+      left: 1px;
+      top: 1px;
+    }
+   }
+   
    strong { color: $orange }
    
    &:after {
