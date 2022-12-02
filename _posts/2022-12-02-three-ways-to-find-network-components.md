@@ -40,7 +40,7 @@ You'll probably need to reference a lof of components in your scripts, so these 
 ```lua
 local container = component.proxy(component.findComponent('StorageContainer 1'))`
 -- container:getInventories()
-``
+```
 
 Typically you will only ever pass the result of `component.findComponent()` into a single `component.proxy()` call. There's no need to declare it as a variable we can just pass the result in directly. Tidy!
 
