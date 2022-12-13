@@ -26,7 +26,7 @@ Init()
 Update()
 ```
 
-Here's the same boilerplate with some additional functions called in the Init function. These functions will register and bind a connected GPU, Large Screen and Network Card. `print()` commands have been used to help debug any connection issues.
+Here's the same boilerplate with some additional functions called in the Init function. These functions will register and bind a connected GPU, Large Screen and Network Card. `print()` commands have been used to display useful debugging information.
 
 ```lua
 local gpu, network
