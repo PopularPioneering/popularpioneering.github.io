@@ -12,12 +12,15 @@ function Init()
   event.ignoreAll()
   event.clear()
   
+  -- perform additional configuration steps here
+  
 end
 
 function Update()
   while true do
     local e, s, v = event.pull(1)
-   
+    
+    -- check for events here
    
   end
 end
