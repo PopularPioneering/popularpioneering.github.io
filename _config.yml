@@ -3,3 +3,6 @@ collections:
   guides:
     output: true
     permalink: /guides/:path/
+  snippets:
+    output: true
+    permalink: /snippets/:path/
