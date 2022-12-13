@@ -24,7 +24,7 @@ layout: default
   </div>
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in site.posts -%}
+      {%- for post in site.guides -%}
       <li class="post-list-item">
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}" style="background: url('{{ post.thumbnail | prepend: site.baseurl }}') top left no-repeat; background-size: cover;">
