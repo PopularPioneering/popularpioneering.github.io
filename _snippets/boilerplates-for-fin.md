@@ -1,6 +1,6 @@
 ---
 layout: snippets
-title: Boilerplatetes for FicsIt-Networks
+title: Boilerplates for FicsIt-Networks
 description: Handy boilerplates with some common setup and configuration functions to bring your graphics and network cards online
 ---
 
