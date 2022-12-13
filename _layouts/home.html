@@ -27,7 +27,7 @@ layout: default
     {%- for post in site.guides -%}
     <li class="post-list-item">
       <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}" style="background: url('{{ post.thumbnail | prepend: site.baseurl }}') top left no-repeat; background-size: cover;">
+        <a class="post-link" href="{{ post.url | relative_url }}" style="background: url('/uploads/thumb-snippets.jpg') top left no-repeat; background-size: cover;">
           <span class="post-thumb-title">{{ post.title | escape }}</a>
         </a>
       </h3>
