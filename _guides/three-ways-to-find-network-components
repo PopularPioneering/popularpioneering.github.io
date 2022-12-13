@@ -87,7 +87,7 @@ local container = component.proxy(component.findComponent('StorageContainer 1'))
 -- Returns a single container
 ```
 
-Notice the `[1]` at the end? That's an instruction to select the first index in our array. We know that the array returned by `proxy()` will contain a single item at index `1` (Lua is one-indexed by default) so we dive right in and pass the component into our local `container` variable. If our array did contain more than one item  we could use `[2]` for the second item, `[3]` for the third component and so on.
+Notice the `[1]` at the end? That's an instruction to select the first index in our array. We know that the array returned by `proxy()` will contain a single item at index `1` (Lua is one-indexed by default) so we dive right in and pass the component into our local `container` variable. If our array did contain more than one item  we could use `[2]` for the second component, `[3]` for the third component and so on.
 
 
 ## 3. By class
