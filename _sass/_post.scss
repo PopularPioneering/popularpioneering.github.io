@@ -1,11 +1,12 @@
+$titleBg: rgba(25,25,25,0.7);
+
 .post-header {
   padding: 70px 50% 70px 50px;
-  
 }
 
 .post-header-wrapper {
   display: block;
-  background: #333;
+  background: $titleBg;
   padding: 20px;
   border-left: 10px solid #d7902a;
 }
@@ -15,8 +16,27 @@
   color: #fff;
 }
 
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  
+  .post-link {
+    display: block;
+    width: 300px;
+    padding: 93%;
+    color: #fff;
+  }
+  
+  .post-thumb-title {
+    background: $titleBg;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .post-header {
     padding: 40px;
+  }
+  .post-list {
+     flex-direction: column;
   }
 }
