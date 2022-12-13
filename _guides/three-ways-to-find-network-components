@@ -31,13 +31,13 @@ local containers = component.proxy(containerGuids)
 -- returns an array of matching components
 ```
 
-This time we are using another method of the component class: `component.findComponent()`. It takes one or more strings (our search terms) and returns an array of component GUIDs with nicknames that match those terms. This means that rather than passing a single GUID string into `component.proxy()` like before, we are passing in an array of GUID strings. 
+This time we are using another method of the component class: `component.findComponent()`. It takes one or more strings (our query terms) and returns an array of component GUIDs with nicknames that match those terms. This means that rather than passing a single GUID string into `component.proxy()` like before, we are passing in an array of GUID strings. 
 
 When `proxy()` receives an array instead of a single string, it returns an array of components instead of a single component. Even if there's only a single GUID in the array, `proxy()` will return an array containing the single component.
 
 #### Working with component arrays
 
-One of the best ways to interact with an array of components is to loop over each item. In this example we've given some Rail Block Signals the nickname 'Networked Rail Signal'. To receive events from these signals we need to pass each one to the `event.listen()` method.
+One of the easiest ways to interact with an array of components is to loop over each item. In this example we've given some Rail Block Signals the nickname 'Networked Rail Signal'. To receive events from these signals we need to pass each one to the `event.listen()` method.
 
 ```lua
 local networkSignalGuids = component.findComponent('Networked Rail Signal')
@@ -48,13 +48,13 @@ for index, signal in pairs(networkSignals) do
 end
 ```
 
-If we ever need to add more signals, we can just give them the correct nickname and restart our script and our new signals will be picked up with the old ones. No code changes required!
+If we ever need to add more signals, we can just give them the same nickname, restart our script, and our new signals will be picked up with the old ones. No code changes required!
 
 #### Nickname queries are powerful
 
-Understanding how to component queryies work is an essential skill - think of it like a search engine for your components. Rather than looking for exact matches, `findComponent()` will return any component where one or more words in the nickname matches the search term. 
+Understanding how component queries work is an essential part of building networks with FIN. Think of them like a search engine - rather than looking for exact matches, `findComponent()` will return any component where one or more words in the nickname matches the search term. 
 
-To demonstrate, build 3 containers and connect them to a network. Lets imagine we want to store Iron Ore in the first container, Copper Ore in the second, and Iron Plates in the third. Using the Network Manager, give the three containers the following nickname:
+To test this out, build 3 containers and connect them to a networked computer. Lets imagine we want to store Iron Ore in the first container, Copper Ore in the second, and Iron Plates in the third. Using the Network Manager, give the three containers the following nicknames:
 
 ```
 Storage Iron Ore
