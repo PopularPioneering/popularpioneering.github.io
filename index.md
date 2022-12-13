@@ -1,5 +1,5 @@
 ---
-title: A logical progression...
+title: Computers, no longer just a component...
 ---
 
 I love Satisfactory, you probably do too. Between us we've must have sunk hundreds if not thousands of hours into it. No regrets! With that amount of time doing anything, it's natural to want to push the boundries of the sandbox. [FicsIt-Networks](https://ficsit.app/mod/FicsItNetworks) is a wonderful mod that lets you do just that. 
