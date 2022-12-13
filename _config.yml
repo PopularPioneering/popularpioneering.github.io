@@ -1,1 +1,5 @@
 theme: minima
+collections:
+  guides:
+    output: true
+    permalink: /guides/:path
