@@ -41,9 +41,8 @@ When `proxy()` receives an array instead of a single string, it returns an array
 One of the best ways to interact with an array of components is to loop over each item. In this example we've given some Rail Block Signals the nickname 'Networked Rail Signal'. To receive events from these signals we need to pass each one to the `event.listen()` method.
 
 ```lua
-
-local networkSignalUuids = component.findComponent('Networked Rail Signal')
-local networkSignals = component.proxy(networkSignalUuids)
+local networkSignalGuids = component.findComponent('Networked Rail Signal')
+local networkSignals = component.proxy(networkSignalGuids)
 
 for index, signal in pairs(networkSignals) do
   event.listen(signal)
