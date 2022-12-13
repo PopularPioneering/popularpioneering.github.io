@@ -2,4 +2,4 @@ theme: minima
 collections:
   guides:
     output: true
-    permalink: /guides/:path
+    permalink: /guides/:path/
