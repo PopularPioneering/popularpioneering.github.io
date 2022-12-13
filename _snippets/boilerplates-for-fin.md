@@ -4,10 +4,9 @@ title: Boilerplates for FicsIt-Networks
 description: Handy boilerplates with some common setup and configuration functions to bring your graphics and network cards online
 ---
 
-Here's a simple boilerplate that allows your script to run safely and gives you some useful ways to inject your logic. The Init function is called when the script first runs (you could perform additional setup functions from here). Once `Init()` has resolved `Update()` is called ensuring your script will run indefinitely. Please note, lowering the value passed to `event.pull()` is not recommended for performance reasons.
+Here's a simple boilerplate that allows your script to run safely and gives you some useful ways to inject your logic. The Init function is called when the script first runs (you could perform additional setup functions from here). Once `Init()` has resolved `Update()` is called ensuring your script will run indefinitely. **Please note**, lowering the value passed to `event.pull()` is not recommended for performance reasons.
 
 ```lua
-
 function Init()
   event.ignoreAll()
   event.clear()
@@ -79,15 +78,22 @@ function Init()
 
   registerNetwork()
 
+  -- perform additional configuration steps here
+
   print('=======================================================')
   print('Listenting for events...')
 end
 
 function Update()
   while true do
-    local e, s, v = event.pull(1)
-   
-   
+    local e, s, v, p, m = event.pull(1)
+    
+    -- check for events here   
+    
+    -- example event handling
+    if e == "NetworkMessage" then
+       print(e, s, v, p, m)
+    end
   end
 end
 
