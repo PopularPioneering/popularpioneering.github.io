@@ -1,17 +1,22 @@
-.post-title {
-  display: block;
+.post-header {
   padding: 70px 50% 70px 50px;
   
-  span {
-    display: block;
-    background: #333;
-    padding: 20px;
-    border-left: 10px solid #d7902a;
-  }
+}
+
+.post-header-wrapper {
+  display: block;
+  background: #333;
+  padding: 20px;
+  border-left: 10px solid #d7902a;
+}
+
+.post-title,
+.post-meta {
+  color: #fff;
 }
 
 @media only screen and (max-width: 600px) {
-  .post-title {
+  .post-header {
     padding: 40px;
   }
 }
