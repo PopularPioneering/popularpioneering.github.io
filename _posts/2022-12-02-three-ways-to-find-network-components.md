@@ -2,6 +2,8 @@
 layout: post
 title: Three ways to find network components
 date: 2022-12-02
+thumbnail: /uploads/thumb-finding-components.jpg
+masthead: /uploads/finding-components.jpg
 ---
 
 ## By UUID
