@@ -112,11 +112,11 @@ You might have also noticed that `findClass()` isn't a method of the component c
 
 ## Further Reading
 
-As always, the FicsIt-Networks Documentation is the best place to cement your understanding of the component network:
+As ever, the FicsIt-Networks Documentation is a great place to cement your understanding of the component network:
 
 * [Basic Concepts: Network Components](https://docs.ficsit.app/ficsit-networks/latest/BasicConcept.html#_network_components)
 * [The Component API](https://docs.ficsit.app/ficsit-networks/latest/lua/api/Component.html)
-* [The Comonent Network](https://docs.ficsit.app/ficsit-networks/latest/lua/guide/TheComponentNetwork.html)
+* [The Component Network](https://docs.ficsit.app/ficsit-networks/latest/lua/guide/TheComponentNetwork.html)
 * [Interacting With Components](https://docs.ficsit.app/ficsit-networks/latest/lua/guide/InteractingWithComponents.html)
 
 
