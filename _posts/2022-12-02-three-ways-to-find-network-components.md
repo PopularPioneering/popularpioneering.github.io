@@ -34,7 +34,7 @@ This time we are using another method of the component class: `component.findCom
 
 When `proxy()` receives an array instead of a single string, it returns an array of components instead of a single component. Even if there's only a single UUID in the array, `proxy()` will return an array containing the single component.
 
-##### Working with component arrays
+#### Working with component arrays
 
 With an array of components, one of the best ways to interact with them is to loop over each item in the table. In this example we've given some Rail Block Signals the nickname 'Networked Rail Signal'. To receive events from these signals we need to pass each one to the `event.listen()` method.
 
@@ -50,7 +50,7 @@ end
 
 If we ever need to add more signals, we can just give them the correct nickname and restart our script, safe in the knowledge their events are being listened to.
 
-##### Nickname queries are powerful
+#### Nickname queries are powerful
 
 Learning how to query your components is a very powerful tool - think of it like a search engine for your components. Rather than looking for exact matches, `findComponent()` will return any component where one or more words in the nickname matches the query term. 
 
@@ -78,7 +78,7 @@ local oreContainers = component.proxy(component.findComponent('Ore'))
 We've also condensed our two calls down into one line. Typically you will only ever pass the result of `findComponent()` into a single `proxy()` call. There's no need to declare it as a variable so we can just pass the result straight in. Nice!
 
 
-##### I only need a single component!
+#### I only need a single component!
 
 You may find yourself using `findComponent` to search for a single component - thats fine, in fact there's a nice little piece of 'syntactic sugar' you can do to make your code a little neater.
 
