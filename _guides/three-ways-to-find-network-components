@@ -92,7 +92,7 @@ Notice the `[1]` at the end? That's an instruction to select the first index in 
 
 ## 3. By class
 
-Can we avoid having to manually enter nicknames completely? Nicknames are very useful when organizing your network, but there are some instances where you might need to 'discover' components on a network without manually entering a nickname. Enter the `findClass()` function.
+Can we avoid having to manually enter nicknames entirely? Nicknames are very useful when organizing your network, but there are some instances where you might need to 'discover' components on a network without manually entering a nickname. Enter the `findClass()` function.
 
 Here's how it looks added to our shortened one-liner from the previous example:
 
