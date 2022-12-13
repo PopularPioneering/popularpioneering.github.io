@@ -6,7 +6,7 @@ date: 2022-12-02
 
 ## By UUID
 
-When you connect a component to your network it is assigned a unique identifier, known as a UUID. You can pass this UUID as a string into the `component.proxy()` function to get a quick and dirty reference to your networked component. You can easily copy the UUID of a component to the clipboard by clicking it in the list of attached components in the terminal.
+When you connect a component to your network it is assigned a unique identifier, known as a UUID. You can pass this UUID as a string into the `component.proxy()` function to get a quick reference to your networked component. You can easily copy the UUID of a component to the clipboard by clicking it in the list of attached components in the terminal.
 
 ```lua
 local container = component.proxy('XYZ123')
@@ -14,52 +14,99 @@ local container = component.proxy('XYZ123')
 -- container:getInventories()
 ```
 
-This technique is not advised for a number of reasons. The most obvious is that if you deconstruct a networked component, that instance and the associated UUID is lost forever and you will have to manually enter the new UUID of the replacement. This can be a real hassle - UUIDs are not human-readable and the more you add to your code the less meaning each one has. Scrolling through a long list of UUIDs to find the right one can get annoying very quickly. 
+This technique is not advised for a number of reasons. UUIDs are assigned to the unique instance of that component; deconstruction will 'lose' the associated UUID and you will have to manually enter the new UUID of the replacement. This can be a real hassle - UUIDs are not human-readable and the more you add to your code the less meaning each one has. Scrolling through a long list of UUIDs to find the right one can get annoying very quickly. 
 
-We want our code to be easy to maintain and not rely on lots of manual copy/pasting, avoiding that kind of gruntwork is the reason we're here! 
+We want our code to be easy to maintain and not rely on lots of manual copy/pasting, avoiding that kind of grunt work with clever logic is the reason we're here! 
 
 ## By nickname query
 
-Rather than directly referencing a component, we can search - or query - our network for something more meaningful. You can give your networked components nicknames by interacting with them using the Network monitor. Giving your components nicknames is important, and this is a very powerful tool with a lot of potential that will be covered in much greater detail in further guides.
+Rather than directly referencing a component, we can search - or query - our network for something more meaningful. You can give your networked components nicknames by interacting with them using the Network monitor. 
 
-For now, here's an example of how you find a component with a nickname. We've given a Mk1 container connected to our computer the nickname of `Storage Container 1`.
+Here's an example of how you find a component with a nickname. We've given a Mk1 container connected to our computer the nickname of `Storage Container 1`.
 
 ```lua
-local matching_component_uuids = component.findComponent('Storage Container 1')
-local container = component.proxy(matching_component_uuids)[1]
+local containerUuids = component.findComponent('Storage Container 1')
+local containers = component.proxy(containerUuids)
+-- returns an array of matching components
 ```
 
 This time we are using another method of the component class: `component.findComponent()`. It takes one or more strings (our search terms) and returns an array of component UUIDs with nicknames that match those terms. This means that rather than passing a single UUID string into `component.proxy()` like before, we are passing in an array of UUID strings. 
 
-When `component.proxy()` receives an array instead of a single string, it returns an array of components instead of a single component. Even if there's only a single UUID in the array, `component.proxy()` will return an array containing the single component.
+When `proxy()` receives an array instead of a single string, it returns an array of components instead of a single component. Even if there's only a single UUID in the array, `proxy()` will return an array containing the single component.
 
-This is why we've added `[1]` to the end our `component.proxy()` call. In this instance we don't want to assign the whole array to our variable `container`, so we're diving right in and assigning the first item instead. We know it's going to be the correct container because there's only one container we named `Storage Container 1`.
+##### Working with component arrays
 
-You'll probably need to reference a lof of components in your scripts, so these two lines are typically shortened to just a single line:
+With an array of components, one of the best ways to interact with them is to loop over each item in the table. In this example we've given some Rail Block Signals the nickname 'Networked Rail Signal'. To receive events from these signals we need to pass each one to the `event.listen()` method.
 
 ```lua
-local container = component.proxy(component.findComponent('StorageContainer 1'))`
+
+local networkSignalUuids = component.findComponent('Networked Rail Signal')
+local networkSignals = component.proxy(networkSignalUuids)
+
+for index, signal in pairs(networkSignals) do
+  event.listen(signal)
+end
 ```
 
-Typically you will only ever pass the result of `component.findComponent()` into a single `component.proxy()` call. There's no need to declare it as a variable we can just pass the result in directly. Tidy!
+If we ever need to add more signals, we can just give them the correct nickname and restart our script, safe in the knowledge their events are being listened to.
+
+##### Nickname queries are powerful
+
+Learning how to query your components is a very powerful tool - think of it like a search engine for your components. Rather than looking for exact matches, `findComponent()` will return any component where one or more words in the nickname matches the query term. 
+
+To demonstrate, build 3 containers and connect them to a network. Lets imagine there is Iron Ore in the first container, Copper Ore in the second, and Iron Plates in the third. Using the Network Manager, give the three containers the following nickname:
+
+```
+Storage Iron Ore
+Storage Copper Ore
+Storage Iron Plates
+```
+
+We can use `findComponent()` to find these components in many different arrangements. 
+
+```lua
+local allContainers = component.proxy(component.findComponent('Storage'))
+-- This will return all three containers
+
+local ironContainers = component.proxy(component.findComponent('Iron'))
+-- This will return the Iron Ore and Iron Plates containers
+
+local oreContainers = component.proxy(component.findComponent('Ore'))
+-- This will return the Iron Ore and Copper Ore containers
+```
+
+We've also condensed our two calls down into one line. Typically you will only ever pass the result of `findComponent()` into a single `proxy()` call. There's no need to declare it as a variable so we can just pass the result straight in. Nice!
+
+
+##### I only need a single component!
+
+You may find yourself using `findComponent` to search for a single component - thats fine, in fact there's a nice little piece of 'syntactic sugar' you can do to make your code a little neater.
+
+```lua
+local container = component.proxy(component.findComponent('StorageContainer 1'))[1]
+-- Returns a single container
+```
+
+Notice the `[1]` at the end? That's an index lookup. We know that the array returned by `proxy()` will contain a single item at index `1` (Lua is one-indexed by default) so we dive right in and pass the component into our local `container` variable. If our array did contain more than one item and we wanted the component in the second position we would use `[2]` instead, `[3]` for the third component and so on.
+
 
 ## By class
 
-Can we avoid having to manually enter nicknames? Assigning nicknames is considered good practice for organisation, but there are some instances where you might need to 'discover' components on a network without hardcoding a nickname. Enter the `findClass()` function.
+Can we avoid having to manually enter nicknames? Assigning nicknames is very useful for organization, but there are some instances where you might need to 'discover' components on a network without hard coding a nickname. Enter the `findClass()` function.
 
 Here's how it looks added to our shortened one-liner from the previous example:
 
 ```lua
-local component.proxy(component.findComponent(findClass("Build_StorageContainerMk1_C")))[1]
+local component.proxy(component.findComponent(findClass("Build_StorageContainerMk1_C")))
 ```
 
-This time we're chaining three function calls. We pass the result of `findClass()` into `component.findComponent()` and then we pass the result of that into `component.proxy()`.
+This time we're chaining three function calls. We pass the result of `findClass()` into `findComponent()` and then we pass the result of that into `proxy()`.
 
-We're passing a string into `findClass()`, this is the internal name the game uses to identify objects - here's a handy cheat sheet if you're looking for a specific value [TODO]. 
+We're passing a string into `findClass()`, this is the internal name the game uses to differentiate object types. You can use the Reflection Viewer built into the Network Manager to find out the class name of an object (typically they all follow the format `Build_[Name]_C`).
 
-Rather than returning a string or array, `findClass()` returns the Type that matches the name. When `component.findComponent()` recieves a Type instead of string, it returns an array of UUIDs for every component with a matching Type on the network. Just like before, we pass that array into `component.proxy()` and then use the `[1]` index lookup to grab our container.
+Rather than returning a string or array, `findClass()` returns the Type that matches the name. When `findComponent()` receives a Type instead of string, it returns an array of UUIDs for every component with a matching Type on the network. 
  
-You might have also noticed that `findClass()` isn't a method of the component class - rather, it is an additional function provided by the Lua runtime. Thanks FicsIt-Networks!
+You might have also noticed that `findClass()` isn't a method of the component class. Instead it is an additional function provided by the FIN Lua runtime. Thanks FicsIt-Networks!
 
 
 
