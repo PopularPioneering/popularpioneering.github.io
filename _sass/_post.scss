@@ -18,7 +18,11 @@ $titleBg: rgba(25,25,25,0.7);
 
 .post-list {
   display: flex;
-  flex-wrap: wrap;
+  gap: 10px;
+
+  .post-list-item {
+     width: 33%; 
+  }
   
   .post-link {
     display: block;
@@ -44,7 +48,16 @@ $titleBg: rgba(25,25,25,0.7);
   .post-header {
     padding: 40px;
   }
-  .post-list {
-     flex-direction: column;
+  .post-list-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .post-header {
+    padding: 40px;
+  }
+  .post-list-item {
+    width: 100%;
   }
 }
