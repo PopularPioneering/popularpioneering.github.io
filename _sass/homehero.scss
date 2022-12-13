@@ -1,0 +1,38 @@
+
+.home-hero-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-content {
+  width: 65%;
+  margin-right: 5%;
+}
+.info-panel {
+  width: 30%;
+  font-size: 0.8em;
+  margin-top: 15px; 
+}
+
+.info-pane {
+   background: #efefef;
+   padding: 20px;
+   margin: 0 0 20px;
+   
+   p { margin-bottom: 0} 
+   
+   .title { 
+     display: flex;
+   }
+   
+   img {
+     margin-right: 10px;
+     height: 60px;
+     width: 60px;
+     border-radius: 5px;
+   }
+}
+
+@media only screen and (max-width: 850px) {
+  .home-content, .info-panel  { width: 100% }
+}
