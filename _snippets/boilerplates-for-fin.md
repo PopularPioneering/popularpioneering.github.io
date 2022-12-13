@@ -1,12 +1,35 @@
 ---
 layout: snippets
 title: Boilerplatetes for FicsIt-Networks
-description: A handy boilerplate with some common setup and configuration functions to bring your graphics and network cards online
+description: Handy boilerplates with some common setup and configuration functions to bring your graphics and network cards online
 ---
+
+Here's a simple boilerplate that allows your script to run safely and gives you some useful ways to inject your logic. The Init function is called when the script first runs (you could perform additional setup functions from here). Once `Init()` has resolved `Update()` is called ensuring your script will run indefinitely. Please note, lowering the value passed to `event.pull()` is not recommended for performance reasons.
+
+```lua
+
+function Init()
+  event.ignoreAll()
+  event.clear()
+  
+end
+
+function Update()
+  while true do
+    local e, s, v = event.pull(1)
+   
+   
+  end
+end
+
+Init()
+Update()
+```
+
+Here's the same boilerplate with some additional functions called in the Init function. These functions will register and bind a connected GPU, Large Screen and Network Card. `print()` commands have been used to help debug any connection issues.
 
 ```lua
 local gpu, network
-local network_port = 1111
 
 function registerGraphics()
   print('- Registering GPU')
@@ -16,7 +39,8 @@ function registerGraphics()
   else
     error('-- No GPU found. Connect a GPU or remove this function call.')
   end
-  screen = component.proxy(component.findComponent(findClass('Build_Screen_C')))[1]
+  
+  local screen = component.proxy(component.findComponent(findClass('Build_Screen_C')))[1]
   if screen then
     print('-- Screen found:', '#'..screen.hash)
   else
@@ -27,7 +51,6 @@ function registerGraphics()
   gpu:bindScreen(screen)  
   gpu:flush()
   print('-- GPU bound and ready')
-  
 end
 
 function registerNetwork()
@@ -41,7 +64,6 @@ function registerNetwork()
   event.listen(network)
   network:open(network_port)
   print('-- Network online with port', network_port, 'open')
-
 end
 
 function Init()
