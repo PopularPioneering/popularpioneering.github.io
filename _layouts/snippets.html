@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="snippet h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="snippet-header">
+      <h1 class="snippet-title p-name" itemprop="name headline">
+        <span>{{ page.title | escape }}</span>
+      </h1>
+    </div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content | markdownify }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
