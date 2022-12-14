@@ -5,9 +5,13 @@
 }
 
 .home-content {
-  width: 65%;
-  margin-right: 5%;
+  width: calc(70% - 80px);
+  padding: 20px;
+  border: 10px solid #fff;
+  margin-right: 20px;
+  background: url('/uploads/intro-bg.gif');
 }
+
 .info-panel {
   width: 30%;
   font-size: 0.8em;
