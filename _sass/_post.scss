@@ -1,4 +1,6 @@
 $titleBg: rgba(25,25,25,0.7);
+$gap: 10px;
+$margin: $gap / 2;
 
 .post-header {
   padding: 70px 50% 70px 50px;
@@ -17,12 +19,13 @@ $titleBg: rgba(25,25,25,0.7);
 }
 
 .post-list-item {
-   width: 33%; 
+   width:  calc(33% - $margin); 
+   margin-bottom: 0;
 }
 .post-list {
   display: flex;
-  gap: 10px;
-
+  flex-wrap: wrap;
+  gap: $gap;
   
   .post-link {
     display: block;
@@ -49,7 +52,7 @@ $titleBg: rgba(25,25,25,0.7);
     padding: 40px;
   }
   .post-list-item {
-    width: 50%;
+    width: calc(50% - $margin);
   }
   
   .post-thumb-title {
