@@ -1,6 +1,7 @@
 ---
-title: Computers: no longer just a component...
+title: "Computers: no longer just a component..."
 ---
+
 
 When gazing down on your latest sprawling industrial complex -- FicsIt cup in hand -- have you ever thought: "How could automate this *even more*?" Perhaps you long for that central control room, bristling with working displays and retro-future control panels.
 
