@@ -23,7 +23,7 @@ We want our code to be easy to maintain and not rely on lots of manual copy/past
 
 Rather than directly referencing a component, we can search - or query - our network for something more meaningful. You can give your networked components nicknames by interacting with them using the Network monitor. 
 
-Here's an example of how you find a component with a nickname. We've given a Mk1 container connected to our computer the nickname of `Storage Container 1`.
+Here's an example of how you find a component with a nickname. We've given a connected Mk1 container the nickname of `Storage Container 1`.
 
 ```lua
 local containerGuids = component.findComponent('Storage Container 1')
@@ -48,7 +48,7 @@ for index, signal in pairs(networkSignals) do
 end
 ```
 
-If we ever need to add more signals, we can just give them the same nickname, restart our script, and our new signals will be picked up with the old ones. No code changes required!
+If we ever need to add more signals, we can just give them the same nickname, restart our script, and our new signals will be picked up alongisde the old ones. No code changes required!
 
 #### Nickname queries are powerful
 
